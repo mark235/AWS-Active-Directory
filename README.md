@@ -4,7 +4,7 @@
 AWS Active Directory Service enables seamless integration of Active Directory (AD) features within AWS cloud infrastructure. It provides a fully managed AD environment, supporting use cases like managing user identities, applying group policies, and providing single sign-on (SSO) across AWS applications. AWS offers three main options for integrating AD: **AWS Managed Microsoft AD**, **AD Connector**, and **Simple AD**. Each offers unique capabilities suited to different deployment needs.
 
 <div align="center">
-    <img src="file/ad.png" alt="AWS Solutions Architect Associate" width="200" height="200">
+    <img src="file/ad.png" alt="AWS Solutions Architect Associate" width="300" height="300">
 </div>
 
 ## Key Features
