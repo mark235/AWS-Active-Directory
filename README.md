@@ -23,6 +23,82 @@ AWS Active Directory Service enables seamless integration of Active Directory (A
 - **Domain Controllers (DCs)**: Essential for directory functioning, providing services like DNS, LDAP, and authentication.
 - **Trust Relationships**: Allow users from one domain to access resources in another domain (cross-domain and cross-forest trusts).
 
+---
+
+# AWS Directory Service Setup Guide
+
+This guide provides a step-by-step approach to setting up an AWS Directory Service using **AWS Managed Microsoft AD**. AWS Managed Microsoft AD enables you to deploy a fully managed Active Directory in the AWS Cloud, supporting seamless integration with AWS services and on-premises resources.
+
+1. [Step 1: Select Directory Type](#step-1-select-directory-type)
+2. [Step 2: Enter Directory Information](#step-2-enter-directory-information)
+3. [Step 3: Choose VPC and Subnets](#step-3-choose-vpc-and-subnets)
+4. [Step 4: Review and Create](#step-4-review-and-create)
+
+
+AWS Directory Service provides multiple options for running directory services on AWS, including **AWS Managed Microsoft AD**, **Simple AD**, and **AD Connector**. This guide focuses on setting up **AWS Managed Microsoft AD**, which provides a fully managed Microsoft Active Directory and supports seamless integration with AWS services.
+
+
+## Step 1: Select Directory Type
+
+1. Navigate to the **AWS Directory Service** dashboard in the AWS Management Console.
+2. Click on **Set up directory** to start the setup process.
+3. Select **AWS Managed Microsoft AD** as the directory type.
+
+   - **AWS Managed Microsoft AD** provides a managed, high-availability Microsoft Active Directory in the AWS Cloud that you can use with other AWS services or your on-premises Active Directory.
+
+   ![Select Directory Type](file/ad2.png)
+
+
+
+## Step 2: Enter Directory Information
+
+1. In the **Directory information** section, fill out the required fields:
+   - **Directory DNS name**: Enter the fully qualified domain name (FQDN) for the directory, such as `corp.example.com`.
+   - **NetBIOS name**: Specify a short name for the directory (e.g., `CORP`).
+   - **Description (optional)**: Provide a brief description of the directory.
+   - **Edition**: Choose the edition that best fits your needs, either **Standard** or **Enterprise**.
+   
+   - **Standard Edition**: Suitable for smaller deployments (up to 5,000 users).
+   - **Enterprise Edition**: Suitable for larger deployments (up to 100,000 users).
+
+   ![Enter Directory Information](file/ad3.png)
+   ![Enter Directory Information](file/ad4.png)
+
+
+
+## Step 3: Choose VPC and Subnets
+
+1. Select the **VPC** in which you want to deploy the directory.
+2. Choose two **subnets** in different Availability Zones (AZs) within the VPC. AWS Managed Microsoft AD requires at least two subnets for redundancy and high availability.
+   - The directory will deploy a Domain Controller in each of the selected subnets.
+   
+   **Note**: Make sure that the subnets have adequate network access for Active Directory services and any additional integrations you may plan.
+
+   ![Choose VPC and Subnets](file/ad5.png)
+
+
+
+## Step 4: Review and Create
+
+1. Review all the information you have entered to ensure it is correct.
+2. Click on **Create directory** to initiate the setup.
+3. AWS will begin provisioning your AWS Managed Microsoft AD. This process may take several minutes.
+   
+   **Important**: Once the directory is created, you can configure additional settings such as **Trust relationships**, **Single Sign-On (SSO)**, and **Group Policies** if needed.
+
+   ![Review and Create](file/ad6.png)
+
+
+
+After completing these steps, your AWS Managed Microsoft AD will be up and running. You can now use it to manage your AWS resources, integrate with on-premises AD, or implement SSO for AWS services. AWS Managed Microsoft AD simplifies Active Directory management by automating deployment, patching, and backup tasks, allowing you to focus on your core business operations.
+
+For additional configurations or advanced settings, refer to the [AWS Directory Service documentation](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html).
+
+
+**Note**: Ensure that security groups, IAM permissions, and network configurations are appropriately set up to allow your applications and users to access the directory services.
+
+---
+
 ## Pricing
 1. **AWS Managed Microsoft AD**: Charges are based on the size of the directory (Standard or Enterprise edition) and the number of domain controllers.
 2. **AD Connector**: Priced per-hour based on the number of users.
