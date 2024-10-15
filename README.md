@@ -25,7 +25,7 @@ AWS Active Directory Service enables seamless integration of Active Directory (A
 
 ---
 
-# AWS Directory Service Setup Guide
+# AWS Managed Active Directory Service Setup Guide
 
 This guide provides a step-by-step approach to setting up an AWS Directory Service using **AWS Managed Microsoft AD**. AWS Managed Microsoft AD enables you to deploy a fully managed Active Directory in the AWS Cloud, supporting seamless integration with AWS services and on-premises resources.
 
